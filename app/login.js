@@ -12,7 +12,6 @@ loginForm.onsubmit=async e=>{
  if(!LifeCloud.configured()){loginError.textContent='클라우드 연결키가 비어 있습니다. app/supabase-config.js의 Publishable Key를 확인해주세요.';return}
  const btn=e.submitter;if(btn){btn.disabled=true;btn.textContent='클라우드에서 불러오는 중…'}
  try{
-  const health=await LifeCloud.preflight();if(!health.ok)throw new Error(health.message);
   try{await LifeCloud.signIn(username,password)}
   catch(firstErr){
    /* v10 로컬 계정이면 첫 로그인 때 자동으로 클라우드 계정으로 승격 */
