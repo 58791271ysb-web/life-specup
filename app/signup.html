@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ko">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>캐릭터 생성 | 인생 스펙업</title><link rel="stylesheet" href="signup.css"></head>
+<body>
+<main class="signup-shell">
+<section class="intro">
+  <div class="brand" onclick="location.href='login.html'" style="cursor:pointer"><span>⚡</span> 인생 스펙업</div>
+  <p class="tag">REAL LIFE RPG</p><h1>내 현실 캐릭터를<br>생성하세요.</h1>
+  <p>같은 자격증도 목표 직무와 채용 전형에 따라 가치가 달라집니다.</p>
+  <div class="steps"><div class="active"><b>1</b><span>계정</span></div><div><b>2</b><span>프로필</span></div><div><b>3</b><span>목표 트랙</span></div><div><b>4</b><span>자격증</span></div></div>
+</section>
+<section class="form-card">
+<div class="progress"><div id="bar"></div></div>
+<form id="signupForm">
+<section class="page active">
+ <p class="eyebrow">STEP 01</p><h2>계정 생성</h2><p class="desc">로그인에 사용할 기본 정보입니다.</p>
+ <label>아이디 <em>*</em><input id="userId" required minlength="4" placeholder="4자 이상"></label>
+ <label>비밀번호 <em>*</em><input id="password" required minlength="6" type="password" placeholder="6자 이상"></label>
+ <label>비밀번호 확인 <em>*</em><input id="password2" required type="password"></label>
+</section>
+<section class="page">
+ <p class="eyebrow">STEP 02</p><h2>현재 프로필</h2><p class="desc">재직 중이라면 이 정보가 곧 첫 번째 경력 이력이 됩니다. 내 정보에서 다시 추가할 필요가 없습니다.</p>
+ <div class="two"><label>이름/닉네임 <em>*</em><input id="nickname" required></label><label>생년월일 <em>*</em><input id="birth" required type="date"></label></div>
+ <label>최종 학력 <em>*</em><select id="education" required><option value="">선택</option><option>고등학교 졸업</option><option>전문대 재학/졸업</option><option>대학교 재학/졸업</option><option>대학원 이상</option></select></label>
+ <label>현재 상태 <em>*</em><select id="employment" required><option value="">선택</option><option>재학 중</option><option>취업 준비 중</option><option>재직 중</option><option>자영업/프리랜서</option><option>기타</option></select></label>
+ <div id="employedFields"><div class="two"><label>현재 직무<select id="currentJob"></select></label><label>고용형태<select id="employmentType"></select></label></div>
+ <div class="two"><label>회사 유형<select id="currentCompanyType"></select></label><label>회사명<input id="currentCompanyName" placeholder="선택 입력"></label></div>
+ <label>입사일<input id="joinDate" type="date"><span class="hint">오늘 날짜를 기준으로 관련직무 경력이 자동 증가합니다.</span></label>
+ <label class="checkline"><input id="currentRelevant" type="checkbox" checked> 이 경력을 목표 분야 관련직무 경력으로 산정</label></div>
+</section>
+<section class="page">
+ <p class="eyebrow">STEP 03</p><h2>목표 채용 트랙</h2><p class="desc">이 정보가 자격증의 개인별 티어를 결정합니다.</p>
+ <label>희망 분야 <em>*</em><select id="industry" required><option value="">선택</option><option>전기·전자</option><option>시설관리</option><option>제조·생산</option><option>공공·공기업</option><option>IT</option><option>건설</option></select></label>
+ <label>목표 직무 <em>*</em><div class="searchbox"><input id="jobSearch" placeholder="예: 전기, 시설, 설비" autocomplete="off"><div id="jobResults" class="results"></div></div><input id="goalJob" required type="hidden"><div id="jobSelected" class="selected">아직 선택하지 않았습니다.</div></label>
+ <div class="two"><label>기업 유형 <em>*</em><select id="companyType" required><option value="">선택</option><option>대기업</option><option>중견기업</option><option>중소기업</option><option>공기업</option><option>공공기관</option><option>공무원</option><option>미정</option></select></label>
+ <label>채용 학력요건 <em>*</em><select id="track" required><option value="">선택</option><option>학력무관</option><option>고졸</option><option>고졸 이상</option><option>초대졸</option><option>초대졸 이상</option><option>대졸</option><option>대졸 이상</option><option>석사 이상</option><option>아직 모름</option></select></label></div><label>채용 유형 <em>*</em><select id="hireType" required><option value="">선택</option><option>신입</option><option>경력</option><option>신입·경력 무관</option><option>아직 모름</option></select></label>
+</section>
+<section class="page">
+ <p class="eyebrow">STEP 04</p><h2>보유 자격증</h2><p class="desc">주요 취업 자격증 목록에서 검색해 추가하세요.</p>
+ <div class="searchbox"><input id="certSearch" placeholder="예: 전기기사, 기능사, 한국사" autocomplete="off"><div id="certResults" class="results"></div></div>
+ <div id="certs" class="certs"></div><p class="hint">없는 경우 비워두고 가입할 수 있습니다.</p>
+ <div id="preview" class="preview"></div>
+</section>
+<p class="error" id="error"></p>
+<div class="buttons"><button type="button" class="secondary" id="prev" hidden>이전</button><button type="button" class="primary" id="next">다음</button><button type="submit" class="primary" id="submit" hidden>캐릭터 생성</button></div>
+</form></section></main><script src="account-storage.js"></script><script src="cert-data.js"></script><script src="career-store-v401.js"></script><script src="signup-v4.js"></script></body></html>

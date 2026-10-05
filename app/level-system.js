@@ -1,0 +1,1 @@
+window.levelInfo=function(xp){let level=1,spent=0;function needFor(l){if(l<=5)return 40+(l-1)*20;if(l<=10)return 140+(l-6)*45;if(l<=20)return 400+(l-11)*90;return 1400+(l-21)*180}let need=needFor(level);while(xp-spent>=need){spent+=need;level++;need=needFor(level)}return{level,cur:xp-spent,need,pct:Math.min(100,(xp-spent)/need*100),total:xp}};

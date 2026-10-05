@@ -1,0 +1,21 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>홈 | 인생 스펙업</title><link rel="stylesheet" href="style.css"></head><body>
+<div class="app"><aside class="sidebar"><a class="brand" href="index.html"><span class="logo">⚡</span><span>인생 스펙업</span></a><nav>
+<button class="nav active" onclick="location.href='index.html'">⌂ <span>홈</span></button><button class="nav" onclick="location.href='career.html'">✦ <span>AI 커리어</span></button><button class="nav" onclick="location.href='quests.html'">✓ <span>퀘스트</span></button><button class="nav" onclick="location.href='certificates.html'">◇ <span>자격증</span></button><button class="nav" onclick="location.href='profile.html'">◎ <span>내 성장</span></button><button class="nav" onclick="location.href='finance.html'">₩ <span>재정</span></button><button class="nav" onclick="location.href='emblems.html'">✦ <span>엠블렘</span></button></nav>
+<div class="nav-foot"><button class="secondary smallbtn" style="width:100%;margin-bottom:9px" onclick="lifeSpecupLogout()">로그아웃</button>LIFE SPEC-UP OS · 5.1</div></aside>
+<main class="home-main"><header class="home-head"><div><p class="eyebrow">TODAY'S MISSION</p><h1><span id="helloName">플레이어</span>님, 오늘은 <span class="accent">한 칸만 전진</span>하면 됩니다.</h1><p class="sub" id="lifeDate"></p></div><button class="secondary" onclick="location.href='quests.html'">오늘 계획 편집</button></header>
+<section id="focusCard" class="focus-card"></section>
+<section class="card target-build-home"><div class="section-title"><div><p class="eyebrow">FUTURE ME · TARGET BUILD</p><h2>내가 만들어가는 미래의 나</h2></div><button class="ghost" onclick="location.href='career.html'">미래의 나 편집 →</button></div><div id="targetBuildHome"></div></section>
+<div class="home-grid">
+<section class="card"><div class="section-title"><div><p class="eyebrow">TODAY</p><h2>오늘의 실행</h2></div><span id="todayRate" class="badge"></span></div><div id="todayActions"></div></section>
+<section class="card"><div class="section-title"><div><p class="eyebrow">ACTIVE GOAL</p><h2>진행 중 목표</h2></div><button class="ghost" onclick="location.href='quests.html'">자세히 →</button></div><div id="goalProgress"></div></section>
+</div>
+<section class="card gap-card"><div class="section-title"><div><p class="eyebrow">REALITY → TARGET</p><h2>현재에서 목표까지</h2></div><button class="ghost" onclick="location.href='career.html'">AI 분석 →</button></div><div class="gap-flow"><div><small>현재</small><b id="currentPath"></b></div><span>→</span><div><small>목표</small><b id="targetPath"></b></div></div><div id="gapHint" class="notice"></div></section>
+<div class="metric-grid">
+<div class="metric"><small>PLAYER LEVEL</small><b>LV.<span id="level">1</span></b><div class="mini-progress"><span id="levelBar"></span></div><em id="levelXp"></em></div>
+<div class="metric"><small>자격증 인증</small><b id="certCount">0</b><em>검증 완료 기준</em></div>
+<div class="metric"><small>순자산</small><b id="netWorth">0원</b><em id="monthlyFlow"></em></div>
+<div class="metric"><small>최근 7일 실행률</small><b id="weekRate">0%</b><em>완료한 계획 기준</em></div>
+</div>
+<section class="card milestone-card"><div class="section-title"><div><p class="eyebrow">LEVEL MILESTONE</p><h2>레벨은 현실 성장의 흔적</h2></div></div><div id="milestoneRoad"></div></section>
+<section class="card"><div class="section-title"><div><p class="eyebrow">RECENT GROWTH</p><h2>최근 성장 기록</h2></div></div><div id="recentHistory"></div></section>
+</main></div><div class="toast" id="toast"></div><script src="account-storage.js"></script><script src="cert-data.js"></script><script src="emblems.js"></script><script src="core.js"></script><script src="auth.js"></script><script src="life-data.js"></script><script src="target-build-v5.js"></script><script src="dashboard-v50.js"></script><script src="migration-v14.js"></script><script src="career-store-v401.js"></script><script src="migration-v40.js"></script></body></html>
