@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ko">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>캐릭터 생성 | 인생 스펙업</title><link rel="stylesheet" href="signup.css"></head>
+<head><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>캐릭터 생성 | 인생 스펙업</title><link rel="stylesheet" href="signup.css?v=11.2"></head>
 <body>
 <main class="signup-shell">
 <section class="intro">
@@ -14,19 +14,19 @@
 <div class="progress"><div id="bar"></div></div>
 <form id="signupForm">
 <section class="page active">
- <p class="eyebrow">STEP 01</p><h2>계정 생성</h2><p class="desc">로그인에 사용할 기본 정보입니다.</p>
+ <p class="eyebrow">STEP 01 · v11.2</p><h2>계정 생성</h2><p class="desc">로그인에 사용할 기본 정보입니다.</p>
  <label>아이디 <em>*</em><input id="userId" type="text" inputmode="text" autocapitalize="none" autocomplete="username" required minlength="3" maxlength="30" placeholder="로그인에 사용할 아이디"></label><p class="hint">PC·휴대폰에서 동일한 아이디로 로그인합니다. 영문/숫자/한글 사용 가능.</p>
  <label>비밀번호 <em>*</em><input id="password" required minlength="8" type="password" autocomplete="new-password" placeholder="8자 이상"></label>
  <label>비밀번호 확인 <em>*</em><input id="password2" required type="password"></label>
 </section>
 <section class="page">
  <p class="eyebrow">STEP 02</p><h2>현재 프로필</h2><p class="desc">재직 중이라면 이 정보가 곧 첫 번째 경력 이력이 됩니다. 내 정보에서 다시 추가할 필요가 없습니다.</p>
- <div class="two"><label>이름/닉네임 <em>*</em><input id="nickname" required></label><label>생년월일 <em>*</em><div class="birth-fields"><input id="birthY" type="number" inputmode="numeric" pattern="[0-9]*" min="1900" max="2100" placeholder="1996" aria-label="출생 연도"><input id="birthM" type="number" inputmode="numeric" pattern="[0-9]*" min="1" max="12" placeholder="월" aria-label="출생 월"><input id="birthD" type="number" inputmode="numeric" pattern="[0-9]*" min="1" max="31" placeholder="일" aria-label="출생 일"></div><input id="birth" type="hidden" required><span class="hint">모바일에서도 숫자 키패드로 바로 입력됩니다.</span></label></div>
+ <div class="two"><label>이름/닉네임 <em>*</em><input id="nickname" required></label><label>생년월일 <em>*</em><div class="birth-fields"><input id="birthY" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" placeholder="1996" aria-label="출생 연도"><input id="birthM" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2" placeholder="월" aria-label="출생 월"><input id="birthD" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2" placeholder="일" aria-label="출생 일"></div><input id="birth" type="hidden" required><span class="hint">모바일에서도 숫자 키패드로 바로 입력됩니다.</span></label></div>
  <label>최종 학력 <em>*</em><select id="education" required><option value="">선택</option><option>고등학교 졸업</option><option>전문대 재학/졸업</option><option>대학교 재학/졸업</option><option>대학원 이상</option></select></label>
  <label>현재 상태 <em>*</em><select id="employment" required><option value="">선택</option><option>재학 중</option><option>취업 준비 중</option><option>재직 중</option><option>자영업/프리랜서</option><option>기타</option></select></label>
  <div id="employedFields"><div class="two"><label>현재 직무<select id="currentJob"></select></label><label>고용형태<select id="employmentType"></select></label></div>
  <div class="two"><label>회사 유형<select id="currentCompanyType"></select></label><label>회사명<input id="currentCompanyName" placeholder="선택 입력"></label></div>
- <label>입사일<input id="joinDate" type="date"><span class="hint">오늘 날짜를 기준으로 관련직무 경력이 자동 증가합니다.</span></label>
+ <label>입사일<div class="birth-fields join-fields"><input id="joinY" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" placeholder="연도" aria-label="입사 연도"><input id="joinM" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2" placeholder="월" aria-label="입사 월"><input id="joinD" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2" placeholder="일" aria-label="입사 일"></div><input id="joinDate" type="hidden"><span class="hint">연·월·일을 누르면 휴대폰 숫자 키패드가 열립니다. 경력은 오늘 기준으로 자동 증가합니다.</span></label>
  <label class="checkline"><input id="currentRelevant" type="checkbox" checked> 이 경력을 목표 분야 관련직무 경력으로 산정</label></div>
 </section>
 <section class="page">
@@ -44,4 +44,4 @@
 </section>
 <p class="error" id="error"></p>
 <div class="buttons"><button type="button" class="secondary" id="prev" hidden>이전</button><button type="button" class="primary" id="next">다음</button><button type="submit" class="primary" id="submit" hidden>캐릭터 생성</button></div>
-</form></section></main><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="supabase-config.js"></script><script src="account-storage.js"></script><script src="cloud-sync.js"></script><script src="cert-data.js"></script><script src="career-store-v401.js"></script><script src="signup-v4.js"></script></body></html>
+</form></section></main><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="supabase-config.js?v=11.2"></script><script src="account-storage.js?v=11.2"></script><script src="cloud-sync.js?v=11.2"></script><script src="cert-data.js?v=11.2"></script><script src="career-store-v401.js?v=11.2"></script><script src="signup-v4.js?v=11.2"></script></body></html>

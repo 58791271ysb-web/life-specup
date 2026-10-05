@@ -1,13 +1,23 @@
-# 인생 스펙업 Cloud 연결 (1회 설정)
-1. Supabase에서 새 프로젝트를 만듭니다.
-2. SQL Editor에서 `supabase/schema.sql` 전체를 실행합니다.
-3. Project Settings > API에서 Project URL과 Publishable key(또는 legacy anon key)를 복사합니다.
-4. `app/supabase-config.js`의 두 값을 교체합니다.
-5. GitHub에 다시 Push합니다.
-6. Authentication > URL Configuration에서 Site URL을 `https://58791271ysb-web.github.io/life-specup/` 로 설정하고 Redirect URLs에 `https://58791271ysb-web.github.io/life-specup/app/login.html` 을 추가합니다.
+# 인생 스펙업 v11.2 클라우드 최종 설정
 
-중요: service_role 키는 절대로 HTML/JS/GitHub에 넣지 마세요.
+이미 `schema.sql` 실행이 Success였다면 DB SQL은 다시 실행하지 않아도 됩니다.
 
+## 1. Publishable key 넣기
+`app/supabase-config.js`를 열고 `PASTE_YOUR_SUPABASE_PUBLISHABLE_KEY_HERE`만 Supabase의 **Publishable key**로 교체하세요.
+Project URL은 현재 프로젝트 주소로 이미 입력되어 있습니다.
+Secret key / service_role key는 절대 넣지 마세요.
 
-## v11.1 아이디 로그인 필수 설정
-Supabase Dashboard > Authentication > Sign In / Providers > Email 에서 **Confirm email을 OFF**로 설정하세요. v11.1은 사용자가 입력한 아이디를 내부 인증용 주소로 변환하므로 이메일 인증을 사용하지 않습니다. 로그인 화면에는 이메일이 노출되지 않습니다.
+## 2. 이메일 확인 끄기 (필수)
+Supabase Dashboard → Authentication → Sign In / Providers → Email에서 **Confirm email을 OFF**로 설정하세요.
+인생 스펙업은 사용자 화면에서는 `아이디 + 비밀번호`만 사용하고, 내부적으로만 Supabase Auth와 연결합니다.
+
+## 3. GitHub Pages 배포
+ZIP 내용물을 저장소 루트에 덮어쓴 뒤 Commit → Push origin.
+`index.html`이 저장소 루트에 있어야 합니다.
+
+## 4. 최종 실기기 확인
+- PC: 새 아이디 생성 → 캐릭터 생성 → 홈 진입
+- PC: 공부 기록 1개 저장 → 로그아웃 → 같은 아이디 재로그인 → 기록 유지
+- 모바일: 같은 아이디 로그인 → PC 기록 확인
+- 모바일: 생년월일/입사일 연·월·일 터치 → 숫자 키패드 표시
+- 모바일에서 기록 추가 → PC 새로고침/재로그인 → 기록 확인

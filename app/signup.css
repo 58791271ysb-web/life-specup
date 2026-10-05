@@ -4,3 +4,7 @@ body{margin:0;min-height:100vh;background:var(--bg);color:var(--text);font-famil
 @media(max-width:800px){.signup-shell{display:block}.intro{padding:30px 22px 10px}.intro h1{font-size:30px}.intro>p:not(.tag),.steps{display:none}.brand{margin-bottom:25px}.form-card{margin:10px auto 35px}.two{grid-template-columns:1fr}}
 .birth-fields{display:grid;grid-template-columns:1.4fr .8fr .8fr;gap:7px}.birth-fields input{text-align:center;min-width:0}
 @media(max-width:560px){body{min-height:100dvh}.intro{padding:18px 16px 2px}.brand{margin-bottom:10px;font-size:18px}.tag,.intro h1{display:none}.form-card{width:calc(100% - 20px);padding:22px 16px;margin:8px auto 20px;border-radius:18px}.progress{margin-bottom:20px}h2{font-size:23px}.desc{font-size:13px;margin-bottom:16px}label{margin:12px 0}input,select{font-size:16px;min-height:48px}.primary,.secondary{min-height:48px}.buttons{position:sticky;bottom:0;background:linear-gradient(transparent,#10182b 28%);padding-top:18px}.birth-fields{grid-template-columns:1.3fr .8fr .8fr}}
+
+/* v11.2 mobile hardening */
+.join-fields input,.birth-fields input{font-variant-numeric:tabular-nums}
+@media(max-width:560px){.join-fields,.birth-fields{gap:8px}.join-fields input,.birth-fields input{font-size:18px;min-height:52px;padding:12px 8px}.form-card{overflow:visible}.error:not(:empty){position:sticky;bottom:62px;z-index:30;background:#301724;border:1px solid #713040;border-radius:10px;padding:10px}.buttons{z-index:25}}

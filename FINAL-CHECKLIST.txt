@@ -1,0 +1,26 @@
+인생 스펙업 v11.2 FINAL STABLE
+
+[수정]
+- PC/모바일 로그인: 아이디 + 비밀번호로 통일 (이메일 UI 없음)
+- 기존 v10 로컬 계정: 첫 클라우드 로그인 시 자동 승격 시도
+- 생년월일: 연/월/일 숫자 키패드 입력
+- 입사일: 연/월/일 숫자 키패드 입력 (native date 제거)
+- 캐릭터 생성 검증 실패 시 잘못된 0페이지 이동 버그 수정
+- Confirm email이 켜진 경우 프로필을 잃고 첫 화면으로 튕기지 않고 오류를 현재 화면에 표시
+- 로컬 CSS/JS ?v=11.2 캐시 버스터 + no-cache 메타 추가
+- Supabase Project URL은 현재 프로젝트 값으로 미리 입력
+
+[배포 전에 반드시 1회]
+1) app/supabase-config.js의 publishableKey에 Supabase Publishable key 입력
+2) Supabase > Authentication > Sign In / Providers > Email > Confirm email OFF
+3) 기존 schema.sql은 이미 Success가 났다면 다시 실행할 필요 없음
+
+[검사 결과]
+- 전체 app/*.js: node --check 통과
+- HTML 로컬 파일 참조: 누락 0
+- 로그인 UI 이메일 문구: 없음
+- 생년월일/입사일 모바일 inputmode=numeric 확인
+- 클라우드 모의 테스트: 가입 -> 저장 -> 로그아웃 -> 동일 아이디 로그인 -> 데이터 복원 통과
+- ZIP 무결성: 패키징 후 검사
+
+주의: 실제 Supabase 서버 E2E는 Publishable key를 이 작업 환경에 제공하지 않았으므로 여기서 직접 접속 테스트할 수 없음.
