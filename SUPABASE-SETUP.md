@@ -7,3 +7,7 @@
 6. Authentication > URL Configuration에서 Site URL을 `https://58791271ysb-web.github.io/life-specup/` 로 설정하고 Redirect URLs에 `https://58791271ysb-web.github.io/life-specup/app/login.html` 을 추가합니다.
 
 중요: service_role 키는 절대로 HTML/JS/GitHub에 넣지 마세요.
+
+
+## v11.1 아이디 로그인 필수 설정
+Supabase Dashboard > Authentication > Sign In / Providers > Email 에서 **Confirm email을 OFF**로 설정하세요. v11.1은 사용자가 입력한 아이디를 내부 인증용 주소로 변환하므로 이메일 인증을 사용하지 않습니다. 로그인 화면에는 이메일이 노출되지 않습니다.
