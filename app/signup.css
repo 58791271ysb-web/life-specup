@@ -8,3 +8,6 @@ body{margin:0;min-height:100vh;background:var(--bg);color:var(--text);font-famil
 /* v11.2 mobile hardening */
 .join-fields input,.birth-fields input{font-variant-numeric:tabular-nums}
 @media(max-width:560px){.join-fields,.birth-fields{gap:8px}.join-fields input,.birth-fields input{font-size:18px;min-height:52px;padding:12px 8px}.form-card{overflow:visible}.error:not(:empty){position:sticky;bottom:62px;z-index:30;background:#301724;border:1px solid #713040;border-radius:10px;padding:10px}.buttons{z-index:25}}
+/* v11.3 mobile-safe employment date: native selects avoid mobile keyboard/date-input failures */
+.join-fields select{text-align:center;min-width:0;font-variant-numeric:tabular-nums}
+@media(max-width:560px){.join-fields select{font-size:16px;min-height:52px;padding:10px 6px}}

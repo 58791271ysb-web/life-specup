@@ -4,6 +4,6 @@
  * 절대로 service_role key를 여기에 넣지 마세요.
  */
 window.LIFE_CLOUD_CONFIG = {
-  url: "https://iuph1pcjicfgrpcbwal.supabase.co",
+  url: "https://iuphlpcjicfgrpcbwal.supabase.co",
   publishableKey: "sb_publishable_RZWzU4wBN_ap0ker_Msa4A_Ro_HaJ1d"
 };
