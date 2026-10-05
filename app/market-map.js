@@ -1,11 +1,15 @@
 window.MARKET_MAP={
-version:"4.1",updated:"2026-10-05",
+version:"7.0",updated:"2026-10-05",
 segments:[
-{id:"fm_general",name:"민간 시설관리·FM",icon:"▦",kind:"private",baseline:54,weights:{cert:22,career:28,experience:26,fit:18,education:4,language:2},note:"일반 FM·시설관리 경력/신입 시장",gate:{}},
-{id:"fm_major",name:"대기업계열 FM",icon:"◆",kind:"private",baseline:64,weights:{cert:18,career:25,experience:23,fit:18,education:11,language:5},note:"계열 FM사·대형사업장 기술직",gate:{}},
-{id:"datacenter",name:"데이터센터 전기",icon:"▣",kind:"private",baseline:68,weights:{cert:18,career:27,experience:30,fit:17,education:5,language:3},note:"UPS·비상발전·수변전 등 실무 비중 큼",gate:{}},
-{id:"public_worker",name:"공공기관 공무직",icon:"▤",kind:"public_worker",baseline:60,weights:{cert:32,career:22,experience:22,fit:18,education:3,language:3},note:"NCS 필기 없는 서류→면접형을 별도 평가",gate:{ncs:false}},
-{id:"public_ncs",name:"공기업 일반 기술직",icon:"◎",kind:"public_ncs",baseline:68,weights:{cert:10,career:4,experience:6,fit:8,education:5,language:7,ncs:30,exam:30},note:"NCS·전공필기 영향이 큰 일반직",gate:{ncs:true}}
+{id:"electrical_maintenance",name:"전기설비 운영·유지보수",icon:"⚡",kind:"private",baseline:54,weights:{cert:24,career:26,experience:24,fit:18,education:5,language:3},note:"건물·공장·Utility 전기설비 운영",gate:{}},
+{id:"plant_utility",name:"공장·플랜트 Utility",icon:"▧",kind:"private",baseline:64,weights:{cert:22,career:28,experience:27,fit:14,education:7,language:2},note:"수변전·공정설비·공사관리",gate:{}},
+{id:"electrical_safety",name:"전기안전관리·점검",icon:"◇",kind:"private",baseline:61,weights:{cert:31,career:29,experience:20,fit:15,education:3,language:2},note:"선임요건·점검·법정 안전관리",gate:{}},
+{id:"construction_gongmu",name:"전기공사·공무",icon:"▤",kind:"private",baseline:60,weights:{cert:22,career:24,experience:20,fit:24,education:7,language:3},note:"시공·견적·내역·대관·현장관리",gate:{}},
+{id:"design_control",name:"전기설계·제어",icon:"⌁",kind:"private",baseline:65,weights:{cert:14,career:16,experience:13,fit:31,education:21,language:5},note:"CAD·회로·PLC/HMI·시운전",gate:{}},
+{id:"renewable",name:"신재생·태양광",icon:"☀",kind:"private",baseline:60,weights:{cert:20,career:19,experience:17,fit:26,education:13,language:5},note:"설계·인허가·PM·O&M",gate:{}},
+{id:"datacenter",name:"데이터센터 전기",icon:"▣",kind:"private",baseline:68,weights:{cert:18,career:27,experience:30,fit:17,education:5,language:3},note:"고압·UPS·발전기·설계검토·공사관리",gate:{}},
+{id:"public_worker",name:"공공 전기 공무직",icon:"▥",kind:"public_worker",baseline:60,weights:{cert:32,career:22,experience:22,fit:18,education:3,language:3},note:"공고별 자격·경력·면접형",gate:{ncs:false}},
+{id:"public_ncs",name:"공기업 전기 일반직",icon:"◎",kind:"public_ncs",baseline:68,weights:{cert:10,career:4,experience:6,fit:8,education:5,language:7,ncs:30,exam:30},note:"NCS·전공필기 영향이 큰 일반직",gate:{ncs:true}}
 ],
 publicWorkerEvidence:[
 {id:"pw_electric_2026",name:"2026 공공기관 시설관리(전기) 공무직 사례",employment:"공무직",education:"학력무관",process:["서류 정량·정성 5배수","면접 1배수"],ncsExam:false,certRule:"전기 관련 기능사 이상 우대",applicants:{day:54,shift:31},selectedDocs:5,confidence:"high",source:"JOB-ALIO 2026 상반기 공무직 시설관리(전기)",sourceUrl:"https://job.alio.go.kr/recruitview.do?idx=297477"},

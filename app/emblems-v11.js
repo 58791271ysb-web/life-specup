@@ -1,0 +1,17 @@
+(()=>{'use strict';
+const E=[]; const add=(id,name,cat,grade,xp,icon,tone,desc,condition,rank)=>E.push({id,name,category:cat,grade,xp,icon,tone,desc,condition,rank});
+[[1,'FIRST STEP','IRON',5],[3,'SPARK III','IRON',12],[7,'SEVEN SIGNAL','BRONZE',25],[14,'FORTNIGHT','BRONZE',35],[30,'UNBROKEN','SILVER',70],[50,'IRON WILL','SILVER',100],[100,'CENTURY','GOLD',180],[200,'RELENTLESS','PLATINUM',300],[365,'THE YEAR','DIAMOND',500],[730,'TWO YEARS','MYTHIC',850],[1000,'ETERNAL','ASCENDANT',1300]].forEach((x,i)=>add('attendance-streak-'+x[0],x[1],'연속출석',x[2],x[3],x[0]+'D',x[2].toLowerCase(),`${x[0]}일 동안 흐름을 끊지 않았다.`,`${x[0]}일 연속 출석`,i));
+[[10,'TEN MARKS','IRON',15],[30,'ROUTINE','BRONZE',40],[50,'FIFTY DAYS','BRONZE',55],[100,'PROOF 100','SILVER',110],[200,'LIFE LOG','GOLD',200],[365,'YEAR OF PROOF','PLATINUM',350],[500,'KEEPER','DIAMOND',550],[1000,'ETERNAL CHECK-IN','MYTHIC',1000],[2000,'LIFETIME LOG','ASCENDANT',1800]].forEach((x,i)=>add('attendance-total-'+x[0],x[1],'누적출석',x[2],x[3],x[0],x[2].toLowerCase(),`누적 ${x[0]}일의 삶을 기록했다.`,`누적 출석 ${x[0]}일`,i));
+[[1,'IGNITION','IRON',8],[10,'FOCUS X','IRON',20],[25,'DISCIPLINE','BRONZE',35],[50,'DEEP FOCUS','BRONZE',55],[100,'HUNDRED HOURS','SILVER',100],[200,'THE GRIND','SILVER',150],[300,'KNOWLEDGE CORE','GOLD',220],[500,'RELENTLESS','PLATINUM',350],[750,'MENTAL FORGE','DIAMOND',500],[1000,'ASCENDANT 1000','MYTHIC',750],[1500,'OBSIDIAN MIND','MYTHIC',950],[2000,'STUDY LEGEND','ASCENDANT',1300],[3000,'TRANSCENDENCE','ASCENDANT',2000]].forEach((x,i)=>add('study-'+x[0],x[1],'누적공부',x[2],x[3],x[0]+'H',x[2].toLowerCase(),`누적 공부 ${x[0]}시간. 투자한 시간이 실력이 되었다.`,`누적 공부 ${x[0]}시간`,i));
+[[3,'FIELD INITIATE','IRON'],[6,'FIELD PROVEN','BRONZE'],[12,'YEAR ONE','SILVER'],[24,'FIELD II','GOLD'],[36,'FIELD III','PLATINUM'],[60,'VETERAN V','DIAMOND'],[120,'DECADE','MYTHIC']].forEach((x,i)=>add('career-'+x[0]+'m',x[1],'경력',x[2],40+i*25,x[0]+'M',x[2].toLowerCase(),`관련 직무에서 ${x[0]}개월을 증명했다.`,`관련경력 ${x[0]}개월`,i));
+add('cert-electric-industrial','ELECTRIC CORE I','자격','SILVER',80,'EI','silver','전기산업기사 취득을 현실에서 증명했다.','전기산업기사 인증',2);
+add('cert-electric-engineer','ELECTRIC CORE II','자격','GOLD',140,'EE','gold','전기기사 취득. 전기 커리어의 핵심 코어가 강화됐다.','전기기사 인증',4);
+add('double-electric','DUAL CORE','빌드','PLATINUM',240,'Ⅱ','platinum','전기기사와 전기공사기사, 두 코어를 완성했다.','전기 쌍기사',5);
+add('double-fire','FIRE DUAL','빌드','PLATINUM',240,'FⅡ','platinum','소방 전기·기계 두 축을 완성했다.','소방 쌍기사',5);
+add('quad-core','QUAD CORE','빌드','MYTHIC',500,'IV','mythic','전기 쌍기사와 소방 쌍기사를 모두 완성했다.','전기·소방 4기사',8);
+add('appoint-1500','GRID ACCESS I','선임','GOLD',180,'1.5','gold','1,500kW 미만 전기안전관리 선임 트랙 조건을 열었다.','1,500kW 미만 선임 요건',4);
+add('appoint-2000','GRID ACCESS II','선임','PLATINUM',300,'2.0','platinum','2,000kW 미만 전기안전관리 선임 트랙 조건을 열었다.','2,000kW 미만 선임 요건',6);
+add('appoint-all','AUTHORIZED // GRID','선임','MYTHIC',600,'∞','mythic','모든 전기설비 범위의 핵심 선임 경력요건에 도달했다.','모든 전기설비 선임 경력요건',9);
+[[10,'ASCENSION I','BRONZE'],[20,'ASCENSION II','SILVER'],[30,'ASCENSION III','GOLD'],[50,'ASCENSION V','PLATINUM'],[75,'VANGUARD','DIAMOND'],[100,'LIFE BUILDER','MYTHIC']].forEach((x,i)=>add('level-'+x[0],x[1],'레벨',x[2],50+i*40,'L'+x[0],x[2].toLowerCase(),`누적 행동으로 LV.${x[0]}에 도달했다.`,`LV.${x[0]}`,i));
+window.EMBLEMS=E;
+})();

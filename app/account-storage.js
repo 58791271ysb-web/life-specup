@@ -1,6 +1,6 @@
 (function(){
 const GLOBAL=new Set(["lifeSpecupAccounts","lifeSpecupActiveUser","lifeSpecupLegacyMigrated","lifeSpecupAccount","lifeSpecupSession"]);
-const DATA_PREFIXES=["lifeSpecupUser","lifeSpecupState","lifeSpecupQuests","lifeSpecupFinance","lifeSpecupVerifiedCerts","lifeSpecupEmblems","lifeSpecupEquippedEmblems","lifeSpecupProofs","lifeSpecupCareerPrefs","lifeSpecupCareerProfile","lifeSpecupSchema","lifeSpecupTargetBuild"];
+const DATA_PREFIXES=["lifeSpecupUser","lifeSpecupState","lifeSpecupQuests","lifeSpecupFinance","lifeSpecupVerifiedCerts","lifeSpecupEmblems","lifeSpecupEquippedEmblems","lifeSpecupProofs","lifeSpecupCareerPrefs","lifeSpecupCareerProfile","lifeSpecupSchema","lifeSpecupTargetBuild","lifeSpecupAttendance","lifeSpecupAchievementQueue"];
 const rawGet=Storage.prototype.getItem,rawSet=Storage.prototype.setItem,rawRemove=Storage.prototype.removeItem;
 function active(){return rawGet.call(localStorage,"lifeSpecupActiveUser")||""}
 function isUserKey(k){return DATA_PREFIXES.some(x=>k===x)}
