@@ -1,8 +1,0 @@
-let s=JSON.parse(localStorage.getItem("lifeSpecupEmblems")||'{"owned":[],"equipped":[]}');s.owned=s.owned||[];s.equipped=s.equipped||[];let filter="전체";
-function save(){localStorage.setItem("lifeSpecupEmblems",JSON.stringify(s));render()}
-function pop(m){let e=document.querySelector("#toast");e.textContent=m;e.classList.add("show");setTimeout(()=>e.classList.remove("show"),1600)}
-function toggle(id){if(!s.owned.includes(id)){pop("아직 획득하지 않은 엠블렘입니다.");return}let i=s.equipped.indexOf(id);if(i>=0)s.equipped.splice(i,1);else{if(s.equipped.length>=5){pop("엠블렘은 최대 5개까지 장착할 수 있어요.");return}s.equipped.push(id)}save()}
-function render(){slotCount.textContent=`${s.equipped.length} / 5`;slots.innerHTML=Array.from({length:5},(_,i)=>{let e=EMBLEMS.find(x=>x.id===s.equipped[i]);return e?`<div class="slot filled" title="${e.name}"><span class="mini-emblem tone-${e.tone}">${e.icon}</span></div>`:`<div class="slot"><span class="muted">+</span></div>`}).join("");
- let cats=["전체",...new Set(EMBLEMS.map(e=>e.category))];filters.innerHTML=cats.map(c=>`<button class="tab ${filter===c?"active":""}" onclick="filter='${c}';render()">${c}</button>`).join("");
- grid.innerHTML=EMBLEMS.filter(e=>filter==="전체"||e.category===filter).map(e=>{let owned=s.owned.includes(e.id),eq=s.equipped.includes(e.id);return `<button class="emblem-card ${owned?"":"locked"} ${eq?"equipped":""}" onclick="toggle('${e.id}')"><div class="emblem-visual tone-${e.tone}">${e.icon}</div><span class="badge">${e.category} · ${e.grade}</span><h3>${e.name}</h3><p class="muted">${e.desc}</p><div class="cert-meta" style="justify-content:center"><b class="xp">+${e.xp} XP</b><span>${owned?(eq?"장착 중":"보유"):"미획득"}</span></div><small class="muted">획득조건: ${e.condition}</small></button>`}).join("")}
-render();

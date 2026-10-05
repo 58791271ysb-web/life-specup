@@ -1,1 +1,0 @@
-(function(){try{let u=JSON.parse(localStorage.getItem("lifeSpecupUser")||"{}");if(window.CAREER_STORE){CAREER_STORE.normalize(u);localStorage.setItem("lifeSpecupUser",JSON.stringify(u))}localStorage.setItem("lifeSpecupSchema","4")}catch(e){console.warn("v4 migration",e)}})();

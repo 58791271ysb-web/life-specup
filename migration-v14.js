@@ -1,1 +1,0 @@
-(function(){let q;try{q=JSON.parse(localStorage.getItem("lifeSpecupQuests")||"{}")}catch{return}if(!q||q._schema>=14)return;q._schema=14;q.optionalSelected=[];Object.values(q.days||{}).forEach(d=>{if(d.settled===undefined)d.legacy=true});localStorage.setItem("lifeSpecupQuests",JSON.stringify(q))})();
