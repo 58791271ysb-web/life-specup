@@ -15,8 +15,8 @@
 <form id="signupForm">
 <section class="page active">
  <p class="eyebrow">STEP 01</p><h2>계정 생성</h2><p class="desc">로그인에 사용할 기본 정보입니다.</p>
- <label>아이디 <em>*</em><input id="userId" required minlength="4" placeholder="4자 이상"></label>
- <label>비밀번호 <em>*</em><input id="password" required minlength="6" type="password" placeholder="6자 이상"></label>
+ <label>이메일 <em>*</em><input id="userId" type="email" autocomplete="email" required placeholder="you@example.com"></label>
+ <label>비밀번호 <em>*</em><input id="password" required minlength="8" type="password" autocomplete="new-password" placeholder="8자 이상"></label>
  <label>비밀번호 확인 <em>*</em><input id="password2" required type="password"></label>
 </section>
 <section class="page">
@@ -44,4 +44,4 @@
 </section>
 <p class="error" id="error"></p>
 <div class="buttons"><button type="button" class="secondary" id="prev" hidden>이전</button><button type="button" class="primary" id="next">다음</button><button type="submit" class="primary" id="submit" hidden>캐릭터 생성</button></div>
-</form></section></main><script src="account-storage.js"></script><script src="cert-data.js"></script><script src="career-store-v401.js"></script><script src="signup-v4.js"></script></body></html>
+</form></section></main><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="supabase-config.js"></script><script src="account-storage.js"></script><script src="cloud-sync.js"></script><script src="cert-data.js"></script><script src="career-store-v401.js"></script><script src="signup-v4.js"></script></body></html>

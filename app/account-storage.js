@@ -2,12 +2,13 @@
 const GLOBAL=new Set(["lifeSpecupAccounts","lifeSpecupActiveUser","lifeSpecupLegacyMigrated","lifeSpecupAccount","lifeSpecupSession"]);
 const DATA_PREFIXES=["lifeSpecupUser","lifeSpecupState","lifeSpecupQuests","lifeSpecupFinance","lifeSpecupVerifiedCerts","lifeSpecupEmblems","lifeSpecupEquippedEmblems","lifeSpecupProofs","lifeSpecupCareerPrefs","lifeSpecupCareerProfile","lifeSpecupSchema","lifeSpecupTargetBuild","lifeSpecupAttendance","lifeSpecupAchievementQueue"];
 const rawGet=Storage.prototype.getItem,rawSet=Storage.prototype.setItem,rawRemove=Storage.prototype.removeItem;
+window.LifeRawStorage={get:rawGet,set:rawSet,remove:rawRemove};
 function active(){return rawGet.call(localStorage,"lifeSpecupActiveUser")||""}
 function isUserKey(k){return DATA_PREFIXES.some(x=>k===x)}
 function scoped(k){let a=active();return a&&isUserKey(k)?`lifeSpecup:${a}:${k}`:k}
 Storage.prototype.getItem=function(k){return rawGet.call(this,scoped(String(k)))}
-Storage.prototype.setItem=function(k,v){return rawSet.call(this,scoped(String(k)),v)}
-Storage.prototype.removeItem=function(k){return rawRemove.call(this,scoped(String(k)))}
+Storage.prototype.setItem=function(k,v){const key=scoped(String(k)),r=rawSet.call(this,key,v);if(window.LifeCloud&&key.startsWith("lifeSpecup:"))LifeCloud.schedule();return r}
+Storage.prototype.removeItem=function(k){const key=scoped(String(k)),r=rawRemove.call(this,key);if(window.LifeCloud&&key.startsWith("lifeSpecup:"))LifeCloud.schedule();return r}
 window.LifeAccounts={
  rawGet:k=>rawGet.call(localStorage,k),rawSet:(k,v)=>rawSet.call(localStorage,k,v),rawRemove:k=>rawRemove.call(localStorage,k),
  accounts(){try{return JSON.parse(rawGet.call(localStorage,"lifeSpecupAccounts")||"{}")}catch{return{}}},
