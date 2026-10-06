@@ -36,7 +36,7 @@ function autoExpenses(){
 }
 function updateSummary(){
  let assets=data.deposits.reduce((s,x)=>s+(+x.amount||0),0)+data.stocks.reduce((s,x)=>s+(+x.amount||0),0)+data.housing.reduce((s,x)=>s+(+x.assetValue||0)+(+x.deposit||0),0),debt=data.debts.reduce((s,x)=>s+(+x.balance||0),0),debtPay=data.debts.reduce((s,x)=>s+(+x.monthly||0),0),housingPay=data.housing.reduce((s,x)=>s+(+x.monthlyRent||0),0),manual=data.expenses.reduce((s,x)=>s+(+x.amount||0),0),saving=data.deposits.reduce((s,x)=>s+(+x.monthlySaving||0),0)+data.stocks.reduce((s,x)=>s+(+x.monthlyInvest||0),0),essential=debtPay+housingPay+manual;
- sumAssets.textContent=fmt(assets);sumDebt.textContent=fmt(debt);sumNet.textContent=fmt(assets-debt);sumOut.textContent=fmt(essential+saving);essentialOut.textContent=fmt(essential);savingOut.textContent=fmt(saving);debtOut.textContent=fmt(debtPay)
+ sumAssets.textContent=fmt(assets);sumDebt.textContent=fmt(debt);sumNet.textContent=fmt(assets-debt);sumOut.textContent=fmt(essential+saving);essentialOut.textContent=fmt(essential);savingOut.textContent=fmt(saving);debtOut.textContent=fmt(debtPay);let ratio=assets?Math.min(999,debt/assets*100):debt?999:0,flow=essential+saving,saveShare=flow?saving/flow*100:0;financePulse.innerHTML=`<div><small>DEBT / ASSET</small><b>${ratio.toFixed(1)}%</b><span>${ratio===0?'부채 없음':ratio<30?'안정 구간':ratio<70?'관리 필요':'부채 비중 높음'}</span></div><div><small>MONTHLY BUILD</small><b>${saveShare.toFixed(0)}%</b><span>월 고정유출 중 저축·투자 비중</span></div><div><small>NET POSITION</small><b class="${assets-debt<0?'bad':'good'}">${assets-debt<0?'NEGATIVE':'POSITIVE'}</b><span>${fmt(assets-debt)}</span></div>`
 }
 function render(){
  data.deposits.forEach(x=>{if(x.monthlySaving===undefined)x.monthlySaving=0});
