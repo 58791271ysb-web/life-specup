@@ -1,3 +1,5 @@
+const REMEMBER_ID_KEY='lifeSpecupRememberLoginId';
+try{const savedId=localStorage.getItem(REMEMBER_ID_KEY)||'';if(savedId){loginId.value=savedId;const cb=document.getElementById('rememberLoginId');if(cb)cb.checked=true}}catch{}
 LifeAccounts.migrateLegacy();
 (async()=>{
  if(LifeCloud.configured()){
@@ -9,6 +11,7 @@ LifeAccounts.migrateLegacy();
 loginForm.onsubmit=async e=>{
  e.preventDefault();loginError.textContent='';
  const username=loginId.value.trim(), password=loginPw.value;
+ try{if(document.getElementById('rememberLoginId')?.checked)localStorage.setItem(REMEMBER_ID_KEY,username);else localStorage.removeItem(REMEMBER_ID_KEY)}catch{}
  if(!LifeCloud.configured()){loginError.textContent='클라우드 연결키가 비어 있습니다. app/supabase-config.js의 Publishable Key를 확인해주세요.';return}
  const btn=e.submitter;if(btn){btn.disabled=true;btn.textContent='클라우드에서 불러오는 중…'}
  try{
