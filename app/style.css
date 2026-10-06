@@ -149,3 +149,6 @@ main{margin:0 auto}.card{border-color:#20314b;background:linear-gradient(145deg,
 
 /* v16.4 finance pulse */
 .finance-pulse-v16{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 12px}.finance-pulse-v16>div{padding:14px 16px;border:1px solid #20334e;border-radius:14px;background:#0b1626}.finance-pulse-v16 small{display:block;font-size:9px;letter-spacing:.12em;color:#70849f;font-weight:900}.finance-pulse-v16 b{display:block;margin:5px 0 3px;font-size:20px}.finance-pulse-v16 span{font-size:10px;color:#8292aa}@media(max-width:650px){.finance-pulse-v16{grid-template-columns:1fr}.summary-cards{grid-template-columns:1fr 1fr}}
+
+/* v16.6 profile completeness */
+.profile-completeness-v16{padding:13px 14px;margin-bottom:10px;border:1px solid #2a3c59;border-radius:13px;background:#0b1627}.profile-completeness-v16>div:first-child{display:flex;justify-content:space-between;align-items:end}.profile-completeness-v16 small{font-size:8px;letter-spacing:.13em;color:#7388a7;font-weight:900}.profile-completeness-v16 b{font-size:21px}.profile-completeness-v16 .mini-progress{margin:9px 0 7px}.profile-completeness-v16 .mini-progress span{display:block;height:100%;background:linear-gradient(90deg,#7898ff,#63d4aa)}.profile-completeness-v16 p{margin:0;color:#8292aa;font-size:10px;line-height:1.55}
