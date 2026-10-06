@@ -1,6 +1,6 @@
 (function(){
 const GLOBAL=new Set(["lifeSpecupAccounts","lifeSpecupActiveUser","lifeSpecupLegacyMigrated","lifeSpecupAccount","lifeSpecupSession"]);
-const DATA_PREFIXES=["lifeSpecupUser","lifeSpecupState","lifeSpecupQuests","lifeSpecupFinance","lifeSpecupVerifiedCerts","lifeSpecupEmblems","lifeSpecupEquippedEmblems","lifeSpecupProofs","lifeSpecupCareerPrefs","lifeSpecupCareerProfile","lifeSpecupSchema","lifeSpecupTargetBuild","lifeSpecupAttendance","lifeSpecupAchievementQueue"];
+const DATA_PREFIXES=["lifeSpecupUser","lifeSpecupState","lifeSpecupQuests","lifeSpecupFinance","lifeSpecupVerifiedCerts","lifeSpecupEmblems","lifeSpecupEquippedEmblems","lifeSpecupProofs","lifeSpecupCareerPrefs","lifeSpecupCareerProfile","lifeSpecupSchema","lifeSpecupTargetBuild","lifeSpecupAttendance","lifeSpecupAchievementQueue","lifeSpecupOneMoves"];
 const rawGet=Storage.prototype.getItem,rawSet=Storage.prototype.setItem,rawRemove=Storage.prototype.removeItem;
 window.LifeRawStorage={get:rawGet,set:rawSet,remove:rawRemove};
 function active(){return rawGet.call(localStorage,"lifeSpecupActiveUser")||""}
