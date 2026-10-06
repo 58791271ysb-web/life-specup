@@ -1,0 +1,19 @@
+LIFE SPEC-UP v16 — PRODUCT REFINEMENT
+
+- Unified asset versioning across Home, Career, Quests, Certificates, Profile, Finance, Emblems.
+- Unified navigation language and mobile app dock.
+- Product-wide focus, touch, button, scrollbar, card and responsive refinements.
+- Centralized plan-based PASS READINESS calculation in core.js.
+- Fixed first-day/yesterday edge cases in readiness warnings.
+- Added PASS READINESS signal to Quest campaign screen.
+- Expanded certificate search across descriptions, roles and issuers.
+- Added certificate type and utilization metadata to detail UI.
+- Added finance health pulse: debt/assets, monthly build share, net position.
+- Added profile completeness signal.
+- Removed duplicate career-store script load on Emblems.
+- Preserved existing user/account data formats and cloud storage keys.
+
+Principles:
+- PASS READINESS is a plan-execution indicator, not a statistical probability of passing.
+- No invented legal eligibility or hiring probabilities.
+- Existing account-scoped data remains compatible.
