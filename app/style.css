@@ -146,3 +146,6 @@ main{margin:0 auto}.card{border-color:#20314b;background:linear-gradient(145deg,
 
 /* v16.2 quest readiness */
 .quest-readiness-mini{display:flex;align-items:center;gap:9px;margin:0 0 14px;padding:9px 11px;width:max-content;max-width:100%;border:1px solid #2a3d5a;border-radius:10px;background:#0b1728}.quest-readiness-mini span{font-size:8px;letter-spacing:.14em;color:#7489a7;font-weight:900}.quest-readiness-mini b{font-size:17px}.quest-readiness-mini em{font-style:normal;font-size:8px;font-weight:900;padding:4px 6px;border-radius:999px}.quest-readiness-mini em.down{color:#ff9a9f;background:#ff637015}.quest-readiness-mini em.ok{color:#72ddb6;background:#55d7aa14}
+
+/* v16.4 finance pulse */
+.finance-pulse-v16{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 12px}.finance-pulse-v16>div{padding:14px 16px;border:1px solid #20334e;border-radius:14px;background:#0b1626}.finance-pulse-v16 small{display:block;font-size:9px;letter-spacing:.12em;color:#70849f;font-weight:900}.finance-pulse-v16 b{display:block;margin:5px 0 3px;font-size:20px}.finance-pulse-v16 span{font-size:10px;color:#8292aa}@media(max-width:650px){.finance-pulse-v16{grid-template-columns:1fr}.summary-cards{grid-template-columns:1fr 1fr}}
